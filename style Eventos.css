@@ -81,10 +81,100 @@ header {
   border-radius: 4px;
   transition: background-color 0.3s;
 }
-
-.btn:hover {
-  background-color: #b07a7a;
+/* Sección de Paquetes de Fotografía */
+.paquetes-foto-section {
+  background-color: #111;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
 }
+
+.paquetes-titulo {
+  font-size: 36px;
+  color: #d38c8c;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.paquetes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.paquete-card {
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(211, 140, 140, 0.15);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.paquete-card:hover {
+  transform: scale(1.02);
+}
+
+.paquete-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.paquete-contenido {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.paquete-contenido h3 {
+  font-size: 24px;
+  color: #ffcfcf;
+  margin-bottom: 10px;
+}
+
+.paquete-contenido p {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.paquete-contenido ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.paquete-contenido li {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.precio {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #d38c8c;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  align-self: center;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.precio:hover {
+  background-color: #c57272;
+}
+
 
 .section {
   padding: 4rem 2rem;
@@ -127,30 +217,7 @@ header {
   
 }
 
-footer {
-  background-color: #1c1c1c;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  
-}
 
-.portafolio {
-  padding: 40px 20px;
-  background-color: #121212;
-  text-align: center;
-}
-
-.portafolio h2 {
-  color: #c58a7a;
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-.portafolio .subtitulo {
-  color: #ccc;
-  margin-bottom: 40px;
-}
 
 .galeria {
   display: grid;
