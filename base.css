@@ -1,0 +1,157 @@
+/* ============================================
+   BASE — Sistema de diseño compartido
+   Jeovanny Rebolledo · Portafolio
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Color */
+  --bg:            #0a0a0a;
+  --bg-surface:    #131313;
+  --bg-card:       #191919;
+  --border:        #2a2a2a;
+  --accent-rose:   #d8a5a5;
+  --accent-terra:  #c58a7a;
+  --text-primary:  #f2ede9;
+  --text-muted:    #9a9a9a;
+
+  /* Type */
+  --font-display: 'Anton', Impact, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  --font-body:    'Inter', Arial, sans-serif;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+/* ============================================
+   SPROCKET STRIP — motivo de filmina (firma visual)
+   ============================================ */
+.sprocket {
+  height: 14px;
+  width: 100%;
+  background-color: var(--bg-surface);
+  background-image: radial-gradient(circle, var(--bg) 3.5px, transparent 3.6px);
+  background-size: 26px 14px;
+  background-position: 13px center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ============================================
+   HEADER / NAV
+   ============================================ */
+header {
+  background-color: #000;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.4rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.logo::before {
+  content: "● ";
+  color: var(--accent-terra);
+  font-size: 0.7rem;
+  vertical-align: middle;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-rose);
+  border-bottom-color: var(--accent-rose);
+}
+
+/* ============================================
+   EYEBROW / SCENE LABELS (utility, reused across pages)
+   ============================================ */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-terra);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background-color: #000;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   RESPONSIVE — shared breakpoints
+   ============================================ */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+}

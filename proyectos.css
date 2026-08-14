@@ -1,0 +1,127 @@
+@import url('base.css');
+
+.page-hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 3rem 2rem;
+}
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.6rem;
+}
+
+.page-hero p {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  max-width: 65ch;
+}
+
+.grid-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.proyecto {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2px;
+  background: var(--border);
+  align-items: stretch;
+}
+
+.proyecto:nth-child(even) {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.proyecto:nth-child(even) .grid-item { order: 2; }
+.proyecto:nth-child(even) .text-block { order: 1; }
+
+.grid-item {
+  background: var(--bg-card);
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) contrast(1.05);
+  transition: filter 0.5s ease, transform 0.6s ease;
+}
+
+.proyecto:hover .grid-item img {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+.grid-item iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  display: block;
+  border: none;
+}
+
+.text-block {
+  background: var(--bg-card);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-block .num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-terra);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.text-block h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.text-block p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .page-hero { padding: 3rem 1.5rem 1.5rem; }
+
+  .grid-container { padding: 0.5rem 1.5rem 3rem; }
+
+  .proyecto,
+  .proyecto:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .proyecto:nth-child(even) .grid-item,
+  .proyecto:nth-child(even) .text-block {
+    order: initial;
+  }
+
+  .grid-item, .grid-item iframe { min-height: 260px; }
+
+  .text-block { padding: 2rem 1.5rem; }
+}
